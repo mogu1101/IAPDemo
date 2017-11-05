@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB6030CE1FAF77E800CB4CC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CB1FAF77E800CB4CC8 /* Alamofire.framework */; };
+		AB6030CF1FAF77E800CB4CC8 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CC1FAF77E800CB4CC8 /* SVProgressHUD.framework */; };
+		AB6030D01FAF77E800CB4CC8 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CD1FAF77E800CB4CC8 /* Mantle.framework */; };
 		ABD056291FAEFF96008F570C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD056281FAEFF96008F570C /* AppDelegate.swift */; };
 		ABD0562B1FAEFF96008F570C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD0562A1FAEFF96008F570C /* ViewController.swift */; };
 		ABD0562E1FAEFF96008F570C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD0562C1FAEFF96008F570C /* Main.storyboard */; };
@@ -14,6 +17,8 @@
 		ABD056331FAEFF96008F570C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD056311FAEFF96008F570C /* LaunchScreen.storyboard */; };
 		ABD0563E1FAEFF96008F570C /* InAppPurchaseTestDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD0563D1FAEFF96008F570C /* InAppPurchaseTestDemoTests.swift */; };
 		ABD056491FAEFF96008F570C /* InAppPurchaseTestDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD056481FAEFF96008F570C /* InAppPurchaseTestDemoUITests.swift */; };
+		ABD056581FAEFFB2008F570C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD056571FAEFFB2008F570C /* StoreKit.framework */; };
+		ABD0565A1FAF01E7008F570C /* IAPAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD056591FAF01E7008F570C /* IAPAgent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB6030CB1FAF77E800CB4CC8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		AB6030CC1FAF77E800CB4CC8 /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		AB6030CD1FAF77E800CB4CC8 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/iOS/Mantle.framework; sourceTree = "<group>"; };
 		ABD056251FAEFF96008F570C /* InAppPurchaseTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InAppPurchaseTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD056281FAEFF96008F570C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD0562A1FAEFF96008F570C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,8 @@
 		ABD056441FAEFF96008F570C /* InAppPurchaseTestDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InAppPurchaseTestDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD056481FAEFF96008F570C /* InAppPurchaseTestDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseTestDemoUITests.swift; sourceTree = "<group>"; };
 		ABD0564A1FAEFF96008F570C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD056571FAEFFB2008F570C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ABD056591FAF01E7008F570C /* IAPAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPAgent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB6030CE1FAF77E800CB4CC8 /* Alamofire.framework in Frameworks */,
+				AB6030CF1FAF77E800CB4CC8 /* SVProgressHUD.framework in Frameworks */,
+				AB6030D01FAF77E800CB4CC8 /* Mantle.framework in Frameworks */,
+				ABD056581FAEFFB2008F570C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,7 @@
 				ABD0563C1FAEFF96008F570C /* InAppPurchaseTestDemoTests */,
 				ABD056471FAEFF96008F570C /* InAppPurchaseTestDemoUITests */,
 				ABD056261FAEFF96008F570C /* Products */,
+				ABD056561FAEFFB2008F570C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +114,7 @@
 			children = (
 				ABD056281FAEFF96008F570C /* AppDelegate.swift */,
 				ABD0562A1FAEFF96008F570C /* ViewController.swift */,
+				ABD056591FAF01E7008F570C /* IAPAgent.swift */,
 				ABD0562C1FAEFF96008F570C /* Main.storyboard */,
 				ABD0562F1FAEFF96008F570C /* Assets.xcassets */,
 				ABD056311FAEFF96008F570C /* LaunchScreen.storyboard */,
@@ -125,6 +141,17 @@
 			path = InAppPurchaseTestDemoUITests;
 			sourceTree = "<group>";
 		};
+		ABD056561FAEFFB2008F570C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB6030CB1FAF77E800CB4CC8 /* Alamofire.framework */,
+				AB6030CC1FAF77E800CB4CC8 /* SVProgressHUD.framework */,
+				AB6030CD1FAF77E800CB4CC8 /* Mantle.framework */,
+				ABD056571FAEFFB2008F570C /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +162,7 @@
 				ABD056211FAEFF96008F570C /* Sources */,
 				ABD056221FAEFF96008F570C /* Frameworks */,
 				ABD056231FAEFF96008F570C /* Resources */,
+				AB6030CA1FAF751700CB4CC8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,6 +223,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8G4B9H2TZU;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					ABD056381FAEFF96008F570C = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -257,12 +290,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AB6030CA1FAF751700CB4CC8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mantle.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ABD056211FAEFF96008F570C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABD0562B1FAEFF96008F570C /* ViewController.swift in Sources */,
+				ABD0565A1FAF01E7008F570C /* IAPAgent.swift in Sources */,
 				ABD056291FAEFF96008F570C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +469,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8G4B9H2TZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InAppPurchaseTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuantiku.InAppPurchaseTestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -429,7 +487,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8G4B9H2TZU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = InAppPurchaseTestDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yuantiku.InAppPurchaseTestDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,6 +577,7 @@
 				ABD0564F1FAEFF96008F570C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABD056501FAEFF96008F570C /* Build configuration list for PBXNativeTarget "InAppPurchaseTestDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +586,7 @@
 				ABD056521FAEFF96008F570C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ABD056531FAEFF96008F570C /* Build configuration list for PBXNativeTarget "InAppPurchaseTestDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +595,7 @@
 				ABD056551FAEFF96008F570C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
