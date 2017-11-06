@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB6030CE1FAF77E800CB4CC8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CB1FAF77E800CB4CC8 /* Alamofire.framework */; };
 		AB6030CF1FAF77E800CB4CC8 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CC1FAF77E800CB4CC8 /* SVProgressHUD.framework */; };
-		AB6030D01FAF77E800CB4CC8 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB6030CD1FAF77E800CB4CC8 /* Mantle.framework */; };
 		ABD056291FAEFF96008F570C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD056281FAEFF96008F570C /* AppDelegate.swift */; };
 		ABD0562B1FAEFF96008F570C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD0562A1FAEFF96008F570C /* ViewController.swift */; };
 		ABD0562E1FAEFF96008F570C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD0562C1FAEFF96008F570C /* Main.storyboard */; };
@@ -64,9 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB6030CE1FAF77E800CB4CC8 /* Alamofire.framework in Frameworks */,
 				AB6030CF1FAF77E800CB4CC8 /* SVProgressHUD.framework in Frameworks */,
-				AB6030D01FAF77E800CB4CC8 /* Mantle.framework in Frameworks */,
 				ABD056581FAEFFB2008F570C /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,8 +293,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Mantle.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			outputPaths = (

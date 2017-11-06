@@ -9,8 +9,6 @@
 import UIKit
 import StoreKit
 import SVProgressHUD
-import Alamofire
-import Mantle
 
 class IAPAgent: NSObject {
     

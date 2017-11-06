@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     func productIds() -> [String] {
-        return ["1234", "123456"]
+        return ["00001", "00002", "00003", "00004"]
     }
     
     func requestProductData() {
@@ -78,6 +78,7 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let product = products[indexPath.row]
         let payment = SKPayment(product: product)
         SKPaymentQueue.default().add(payment)
