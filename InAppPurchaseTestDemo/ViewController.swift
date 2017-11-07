@@ -32,7 +32,8 @@ class ViewController: UIViewController {
     func setupSubviews() {
         title = "IAP Demo"
         view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "刷新收据", style: .plain, target: self, action: #selector(refreshReceipt))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "刷新收据", style: .plain, target: self, action: #selector(refreshReceipt))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "恢复", style: .plain, target: self, action: #selector(restoreTransaction))
         
         view.addSubview(tableView)
     }
@@ -57,6 +58,12 @@ class ViewController: UIViewController {
         let refreshRequst = SKReceiptRefreshRequest()
         refreshRequst.delegate = self
         refreshRequst.start()
+        SVProgressHUD.show(withStatus: "刷新中")
+    }
+    
+    func restoreTransaction() {
+        SKPaymentQueue.default().restoreCompletedTransactions()
+        SVProgressHUD.show(withStatus: "恢复中")
     }
 
 }
@@ -90,10 +97,19 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: SKRequestDelegate {
     func requestDidFinish(_ request: SKRequest) {
         print("请求成功！")
+        if (request.isKind(of: SKReceiptRefreshRequest.self)) {
+            SVProgressHUD.dismiss()
+            SVProgressHUD.showSuccess(withStatus: "刷新收据成功")
+            IAPAgent.shareAgent.verifyReceipt(paymentTransaction: nil)
+        }
     }
     
     func request(_ request: SKRequest, didFailWithError error: Error) {
         print("请求失败！\nError：\(error)")
+        if (request.isKind(of: SKReceiptRefreshRequest.self)) {
+            SVProgressHUD.dismiss()
+            SVProgressHUD.showError(withStatus: "刷新收据失败")
+        }
     }
     
 }

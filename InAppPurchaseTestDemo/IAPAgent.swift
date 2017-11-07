@@ -32,7 +32,8 @@ extension IAPAgent: SKPaymentTransactionObserver {
                 print("商品被添加进queue")
             case .restored:
                 print("恢复商品购买")
-                finishTransaction(transaction)
+                verifyReceipt(paymentTransaction: transaction)
+//                finishTransaction(transaction)
             case .deferred:
                 print("最终状态未确定")
             case .failed:
@@ -42,13 +43,23 @@ extension IAPAgent: SKPaymentTransactionObserver {
         }
     }
     
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        SVProgressHUD.dismiss()
+        SVProgressHUD.showSuccess(withStatus: "恢复成功")
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        SVProgressHUD.dismiss()
+        SVProgressHUD.showError(withStatus: "恢复错误")
+    }
+    
 }
 
 extension IAPAgent {
     
     // MARK: - Utils
     
-    func verifyReceipt(paymentTransaction: SKPaymentTransaction) {
+    func verifyReceipt(paymentTransaction: SKPaymentTransaction?) {
         let receiptUrl = Bundle.main.appStoreReceiptURL
         let receiptData = try? Data(contentsOf: receiptUrl!)
         let receiptString = receiptData?.base64EncodedString(options: .endLineWithLineFeed)
@@ -58,7 +69,6 @@ extension IAPAgent {
         request.httpMethod = "POST"
         
         let payload = "{\"receipt-data\" : \"" + receiptString! + "\", \"password\" : \"bc177479afc84088b3424915c415fb8d\"}"
-        print(payload)
         let payloadData = payload.data(using: .utf8)
         
         request.httpBody = payloadData;
@@ -70,22 +80,31 @@ extension IAPAgent {
         if (result == nil) {
             //验证失败
             print("验证失败")
-            finishTransaction(paymentTransaction)
+            SVProgressHUD.showError(withStatus: "验证失败")
+            if let transaction = paymentTransaction {
+                finishTransaction(transaction)
+            }
             return
         }
         let dict: [String: Any]! = try? JSONSerialization.jsonObject(with: result!, options: .allowFragments) as! [String : Any]
         if (dict != nil) {
             guard let status = dict["status"] as? Int else {
-                finishTransaction(paymentTransaction)
+                if let transaction = paymentTransaction {
+                    finishTransaction(transaction)
+                }
                 return
             }
             if (status == 0) {
                 print(dict!)
                 print("验证成功！")
+                SVProgressHUD.showSuccess(withStatus: "验证成功")
             } else {
                 print("验证失败！")
+                SVProgressHUD.showError(withStatus: "验证失败")
             }
-            finishTransaction(paymentTransaction)
+            if let transaction = paymentTransaction {
+                finishTransaction(transaction)
+            }
         }
     }
     
